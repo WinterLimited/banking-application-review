@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bank Review Crawler</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>타행 스마트뱅킹 어플리케이션 리뷰 분석</h1>
+        <div class="filter-section">
+            <div class="custom-select">
+                <select id="platform" onchange="filterReviews()">
+                    <option value="Google Play" selected>Google Play</option>
+                    <option value="App Store">App Store</option>
+                </select>
+            </div>
+        </div>
+        <div class="bank-tabs">
+            {% for bank in banks %}
+            <button class="bank-tab tablinks" onclick="openBank(event, '{{ bank }}')">
+                <img src="{{ url_for('static', filename='images/' ~ bank|lower ~ '.png') }}" alt="{{ bank }} Logo">
+                <span>{{ bank }}</span>
+            </button>
+            {% endfor %}
+        </div>
+        <div id="reviews-container"></div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
