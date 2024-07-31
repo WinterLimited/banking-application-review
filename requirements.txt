@@ -1,0 +1,4 @@
+google-play-scraper
+app-store-scraper
+pandas
+flask
