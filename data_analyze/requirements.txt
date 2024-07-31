@@ -1,0 +1,7 @@
+flask
+pandas
+google-play-scraper
+app_store_scraper
+matplotlib
+seaborn
+scikit-learn
